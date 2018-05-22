@@ -1,0 +1,26 @@
+<%= form_for :users, url: users_path do |form| %>
+  <div class="text-field">
+    <%= form.label :email %>
+    <%= form.text_field :email, type: 'email' %>
+  </div>
+
+  <div class="text_field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, type: 'first_name' %>
+  </div>
+
+  <div class="text_field">
+    <%= form.label :second_name %>
+    <%= form.text_field :second_name, type: 'second_name' %>
+  </div>
+
+  <div class="password-field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="submit-field">
+    <%= form.submit %>
+  </div>
+ <% end %>
+ 
