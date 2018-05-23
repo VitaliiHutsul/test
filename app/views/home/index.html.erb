@@ -11,7 +11,7 @@
         <li><a href="/users"><i class="fa fa-users"></i><span>Users</span></a></li>
         <li><%= link_to 'Profile', user_path(current_user) ,{class: "fa fa-user"}%></li>
         <li><a href="/tweets"><i class="fa fa-comment"></i><span>All tweets</span></a></li>
-        <li><a href="/users/nazar/edit"><i class="fa fa-cog"></i><span>Setting</span></a></li>
+        <li><%= link_to 'Setting', edit_user_path(current_user) ,{class: "fa fa-user"}%></li>
         <li><%= link_to sign_out_path, method: :delete do %>
               <i class="fa fa-sign-out"></i><span>Sign out</span>
             <% end %>
@@ -34,6 +34,7 @@
             </a>
           </div>
           <div><%= current_user.email%></div>
+          <div><%= %></div>
         </div>
         <div class="stats">
           <table>
