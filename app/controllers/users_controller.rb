@@ -15,7 +15,7 @@ class UsersController < Clearance::UsersController
   def update
     @user = User.find(params[:id])
     if
-    @user.update_attributes(user_params)
+    @user.update_attributes(user_update_params)
     else
     render :edit
     end
@@ -23,7 +23,11 @@ class UsersController < Clearance::UsersController
 	
 	private
 
-	def user_params
-		params.require(:user).permit(:first_name, :second_name, :email, :password)
+	def user_update_params
+		params.require(:user).permit(:first_name, :second_name, :email, :password, :avatar)
 	end
+
+	def user_params
+		params.require(:users).permit(:first_name, :second_name, :email, :password, :avatar)
+	end	
 end

@@ -26,11 +26,11 @@
       <section>
         <div class="profile clearfix">
           <a href="/users/nazar">
-            <img alt="Nazar Taran" class="gravatar" src="https://secure.gravatar.com/avatar/307a99b1eff78a2ca24d7c4097712f75?s=52">
+            <%= image_tag @user.avatar.url %>
           </a>
           <div>
-            <a href="/users/nazar"> 
-              <%= "#{current_user.first_name} #{current_user.second_name}" %>
+            <a href="/user"> 
+              <%= link_to "#{current_user.first_name} #{current_user.second_name}", user_path(current_user)%>
             </a>
           </div>
           <div><%= current_user.email%></div>

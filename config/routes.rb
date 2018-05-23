@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get 'posts/:id/edit', to: 'posts#edit'
   post 'posts/:id/edit', to: 'posts#update'
   resources :users, controller: 'users'
+  resources :tweets
 end

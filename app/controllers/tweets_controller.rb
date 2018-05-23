@@ -4,13 +4,14 @@ def new
  end
 
 def create
- @tweet = Tweet.new(@tweet_params)
- if tweet.save
- redirect_to user_path(@tweet.user)
- else
- render ‘new’
- end
- end
+ @tweet = Tweet.new(tweet_params)
+ @tweet.save
+ redirect_to root_path
+end
+
+def index
+ @tweets = Tweet.all	
+end	
 
 private
 
