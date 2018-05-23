@@ -1,19 +1,31 @@
-     
+ <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="container">
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav navbar-right header-menu">
+<li><%= link_to 'Home', root_path(current_user) ,{class: "fa fa-user"}%></li>
+</ul>
+</div>
+</div>
+</div>
     <%= @user.errors.full_messages %>
     
     <%= form_for(@user) do |f| %>
 
       <%= f.label :first_name %>
-      <%= f.text_field :first_name, class: 'form-control' %>
-
-      <%= f.label :second_name %>
-      <%= f.text_field :second_name, class: 'form-control' %>
-
+      <br></br>
+      <%= f.text_field :first_name, class: 'form-control-left' %>
+          <br></br>
+      <%= f.label :second_name %> 
+          <br></br>
+      <%= f.text_field :second_name, class: 'form-control-left' %>
+          <br></br>
       <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-
+          <br></br>
+      <%= f.email_field :email, class: 'form-control-left' %>
+          <br></br>
       <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-
+      <br></br>
+      <%= f.password_field :password, class: 'form-control-left' %>
+          <br></br>
       <%= f.submit "Save changes", class: "btn btn-primary" %>
       <% end %>

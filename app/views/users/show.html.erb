@@ -1,6 +1,5 @@
 <a href="/"><i class="icon-bar"></i><span>Home</span></a>
 <h1>Profile Page for <%= "#{@user.first_name} #{@user.second_name}" %></h1>
-<p><%= "#{@user.first_name} #{@user.second_name}" %></p>
 <% @user.tweets.each do |tweet| %>
 <p><%= tweet.content %></p>
 <% end %>

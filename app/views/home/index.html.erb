@@ -53,12 +53,15 @@
           </table>
         </div>
         <div class="tweet-box">
-          <form class="new_tweet" id="new_tweet" action="" accept-charset="UTF-8" method="post">
-            <div class="field">
-              <textarea placeholder="Compose new Tweet..." name="tweet[content]" id="tweet_content"></textarea>
+          <%= form_for @tweet do |form| %>
+            <div class="text-field">
+              <%= form.text_field :content %>
+              <%= form.hidden_field :user_id, value: current_user.id %>
             </div>
-            <input type="submit" name="commit" value="Post" class="btn btn-large btn-primary" data-disable-with="Post">
-          </form>
+            <div class="submit-field">
+              <%= form.submit 'Post', class: "btn btn-primary" %>
+            </div>
+          <% end %>
         </div>
       </section>
     </aside>
